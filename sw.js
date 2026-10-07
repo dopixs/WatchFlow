@@ -1,8 +1,8 @@
 /* WatchFlow — service worker : l'appli s'ouvre même sans réseau.
    Les données (Supabase) ne sont jamais mises en cache ici : elles sont
    conservées par l'appli elle-même (cache local + file d'attente). */
-const VERSION = 'watchflow-v1';
-const SHELL = ['./', 'index.html', 'styles.css', 'store.js', 'app.js', 'config.js', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'];
+const VERSION = 'watchflow-v2';
+const SHELL = ['./', 'index.html', 'styles.css', 'store.js', 'app.js', 'config.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
