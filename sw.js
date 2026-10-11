@@ -1,7 +1,7 @@
 /* WatchFlow — service worker : l'appli s'ouvre même sans réseau.
    Les données (Supabase) ne sont jamais mises en cache ici : elles sont
    conservées par l'appli elle-même (cache local + file d'attente). */
-const VERSION = 'watchflow-v2';
+const VERSION = 'watchflow-v3';
 const SHELL = ['./', 'index.html', 'styles.css', 'store.js', 'app.js', 'config.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
@@ -28,3 +28,4 @@ self.addEventListener('fetch', e => {
     return new Response('', { status: 504 });
   }));
 });
+
